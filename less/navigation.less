@@ -1,10 +1,10 @@
 header#top {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  padding: 1rem 0;
+  padding: 2rem;
   h1 {
-    flex: 1 1 300px;
+    flex: 1 0 200px;
+    padding-left: 1rem;
   }
   nav {
     flex: 1 1 500px;
@@ -16,6 +16,11 @@ header#top {
       text-decoration: none;
     }
   }
+
+  @media (max-width: 600px) {
+    padding: 2rem 0 0;
+  }
+
   @media @mobile {
     display: block;
     h1 {
