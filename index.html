@@ -119,6 +119,43 @@
           <div class="btn">Sign Me Up!</div>
         </div>
       </section>
+      <div class="slider">
+        <section class="form">
+          <form>
+            <h2></h2>
+            <label>
+              Name:
+              <input type="text" name="name" placeholder="Your Name" required />
+            </label>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              />
+            </label>
+            <label>
+              Phone Number:
+              <input
+                type="text"
+                name="phone-number"
+                placeholder="123-456-7890"
+              />
+            </label>
+            <label>
+              Special Instructions:
+              <textarea></textarea>
+            </label>
+            <button type="submit">Submit</button>
+          </form>
+          <div class="confirmation">
+            <h2>Success!</h2>
+            <p>All aboard the Fun Bus!!!1</p>
+          </div>
+        </section>
+      </div>
     </div>
     <!-- container -->
 
@@ -126,4 +163,20 @@
       <p>Copyright Fun Bus 2020</p>
     </footer>
   </body>
+  <script>
+    var formWrapper = document.querySelector("section.form");
+    document
+      .querySelectorAll("section.content-pick > div.destination")
+      .forEach(el => {
+        el.querySelector("div.btn").onclick = () => {
+          var packageName = el.querySelector("h4").innerText;
+          formWrapper.querySelector("form > h2").innerText = packageName;
+          formWrapper.scrollIntoView({ behavior: "smooth" });
+        };
+      });
+    document.querySelector("form > button").onclick = e => {
+      e.preventDefault();
+      formWrapper.style.transform = "translateX(-100%)";
+    };
+  </script>
 </html>
