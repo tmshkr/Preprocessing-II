@@ -4,7 +4,6 @@ header#top {
   padding: 2rem;
   h1 {
     flex: 1 0 200px;
-    padding-left: 1rem;
   }
   nav {
     flex: 1 1 500px;
@@ -18,7 +17,13 @@ header#top {
   }
 
   @media (max-width: 600px) {
-    padding: 2rem 0 0;
+    padding: 2rem 2rem 0;
+    nav a {
+      padding: 0.5rem;
+    }
+    // h1 {
+    //   padding-left: 1rem;
+    // }
   }
 
   @media @mobile {
