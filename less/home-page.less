@@ -1,24 +1,40 @@
 .home {
-
+  padding: 2rem;
+  header {
+    h2 {
+      margin: 1rem 0;
+    }
+    @media @mobile {
+      width: 100%;
+      padding: 0 1rem;
+    }
+  }
   .content-section {
     margin: 30px 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 
-   
-    
-    .text-content {
-      width: 48%;
-      padding-right: 1%;
+    div:first-child {
+      margin-right: 2rem;
     }
 
+    .text-content {
+      flex: 1 1 400px;
+    }
     .img-content {
-      width: 48%;
-      padding-left: 1%;
-
+      flex: 1 1 400px;
       img {
         border-radius: 10px;
+      }
+    }
+    @media @mobile {
+      display: block;
+      margin: 30px 0;
+      padding: 1rem;
+      div:first-child {
+        margin-right: unset;
+      }
+      > * {
+        margin: 1rem auto;
       }
     }
   }
@@ -27,21 +43,14 @@
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
 
-    .text-content {
-      padding-left: 1%;
-      padding-right: 0;
-    }
-
-    .img-content {
-      padding-right: 1%;
-      padding-left: 0;
+    @media @mobile {
+      display: block;
     }
   }
 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
-
     img {
       border-radius: 10px;
     }
@@ -52,10 +61,84 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
-
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      .btn {
+        .rounded-button-large(@white, @eastern-blue, 1rem);
+      }
+    }
+    @media @mobile {
+      display: block;
+      .destination {
+        padding: 0 10%;
+        width: 100%;
+      }
     }
   }
-}// home
+
+  div.slider {
+    overflow: hidden;
+    max-width: 500px;
+    margin: auto;
+
+    section.form {
+      display: flex;
+      .transition(transform 0.22s ease-out);
+      form {
+        flex: 0 0 100%;
+        margin: auto;
+        padding: 1rem;
+        h2 {
+          text-align: center;
+        }
+        label {
+          display: block;
+          input {
+            display: block;
+            border: 1px solid black;
+            font-size: 1.5rem;
+            margin: 0.5rem 0 1rem;
+            padding: 1rem;
+            width: 100%;
+          }
+          textarea {
+            margin: 0.5rem 0 1rem;
+            border: 1px solid black;
+            font-size: 1.5rem;
+            padding: 1rem;
+            height: 200px;
+            width: 100%;
+          }
+        }
+        button {
+          display: block;
+          margin: auto;
+          padding: 0.5rem 1rem;
+          font-size: 1rem;
+          .rounded-button-large(@white, @burnt-orange, 1rem);
+        }
+      }
+      div.confirmation {
+        flex: 0 0 100%;
+        text-align: center;
+        h2 {
+          margin-top: 25%;
+        }
+      }
+    }
+  }
+
+  @media @mobile {
+    padding: 1rem;
+
+    .text-content {
+      width: 100%;
+      margin: auto;
+    }
+    .img-content {
+      width: 100%;
+      text-align: center;
+    }
+  }
+} // home
